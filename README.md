@@ -8,7 +8,7 @@ const number1 = 40;
 const number2 = 20;
 ~~~
 
-A palavra `const` é utilizada para declaração de variáveis que não vão ser reatribuíds(não permite reatribuição).
+A palavra `const` é utilizada para declaração de variáveis que não vão ser reatribuídas(não permite reatribuição).
 
 Aqui declaramos duas constantes que serão calculadas no bloco a seguir.
 
@@ -61,4 +61,31 @@ Operadores de atribuição:
 * `++` -> Atribuição com **incremento** (pode ser *pré* ou *pós* incrementado) . Ex:`numero ++` (pós-incremento) ou `++ numero` (pré-incremento)
 * `--` -> Atribuição com **decremento** (pode ser *pré* ou *pós* decremento).  Ex:`numero --` (pós-decremento) ou `-- numero` (pré-decremento)
 
+## Operadores-comparacao.js
 
+Neste arquivo conhecemos os operadores de comparação e a estrutura lógica de decisão **if-else**.
+
+~~~~js
+if (condição) {
+   console.log('VERDADEIRO')
+} else {
+    console.log('FALSO')
+}
+~~~~
+Essa estrutura exibe no console se a condição testada é `true` ou `falsa`. A condição armazena o resultado da **comparação entre duas variáveis**, como segue:
+
+~~~js
+const a = 'a', b = 'A';
+const condicao = a == b;
+~~~
+
+## Operadores de comparação:
+
+* `==`-> é igual
+* `!=`-> não é igual
+* `>` -> maior que
+* `<` -> menor que 
+* `>=`-> maior OU igual
+* `<=`-> menor OU igual
+* `===`-> é estritamente igual ( valor E tipo)
+* `!==`-> não é estritamente igual (valor OU tipo)
