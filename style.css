@@ -1,6 +1,8 @@
 h1{
     text-align: center;
 }
-button{
-    align-items: center;
+div{
+   display: flex;
+   justify-content: center;
+   padding-left: 10px;
 }
