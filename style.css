@@ -1,8 +1,12 @@
-h1{
+body{
     text-align: center;
 }
 div{
-   display: flex;
-   justify-content: center;
-   padding-left: 10px;
+    display: flexbox;
+    margin-top: 10px;
+    text-align: center;
+
+}
+#btCalcIMC{
+    padding-inline: 30px;
 }
