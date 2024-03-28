@@ -7,53 +7,81 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Programas</h1>
-   
+    <div id="bordas">
+
+        <h1>Programas</h1>
+        
         <button type="button" onclick="calculoIMC()">Calculadora IMC</button>
         <button type="button" onclick="converteTEM()">Conversor temperatura</button>
-
+        
         <h2>Calculadora IMC</h2>
         <form action="" id="formIMC">
-    
-                <label for="peso">Peso:</label>
-                <input type="number" id="peso" step="0.5" min="0" max="1000">
-                
-                <label for="altura">Altura:</label>
-                <input type="number" id="altura" step="0.01" min="0" max="3">
-
-                <div>
-                    <button type="button" id="btCalcIMC">Calcular IMC</button>
-                    <button type="reset" id="btLimpar">Limpar</button>
-                </div>
-         
+            
+            <label for="peso">Peso:</label>
+            <input type="number" id="peso" step="0.5" min="0" max="1000">
+            
+            <label for="altura">Altura:</label>
+            <input type="number" id="altura" step="0.01" min="0" max="3">
+            
+            <div>
+                <button type="button" id="btCalcIMC">Calcular IMC</button>
+                <button type="reset" id="btLimpar">Limpar</button>
+            </div>
+            
+        </div>
         </form>
         <div id="resultadoIMC" ></div>
+        
 
     <form action="">
         <h2>Conversor de Temperatura</h2>
+
         <label for="valorTemperatura">Temperatura:</label>
         <input type="number" id="valorTemperatura">
 
         <label for="escalaAtual">Escala atual:</label>
         <select id="escalaAtual">
             <option value="C" selected>Celsius</option>
-            <option value="F">Fahrenheit</option>
+            <option value="F">Fahrenhreit</option>
             <option value="K">Kelvin</option>
         </select>
         
         <label for="escalaConvertida">Escala Convertida:</label>
         <select id="escalaConvertida">
             <option value="C">Celsius</option>
-            <option value="F" selected>Fahrenheit</option>
+            <option value="F" selected>Fahrenhreit</option>
             <option value="K">Kelvin</option>
         </select>
 
-        <button type="button">Convertor</button>
-        <button type="button">Limpar</button>
+        <button type="button" id="Convertor">Convertor</button>
+        <button type="reset" id="Limpar">Limpar</button>
     </form>
-        
+    <div id="resultadoTEM"></div>
         <script src="desafio2.js"></script>
         <script src="desafio3.js"></script>
+
+        <script>
+                
+       if (document.getElementById('escalaAtual').value == ""){ 
+         document.getElementById('2018').setAttribute('disabled','');
+     } else{
+        document.getElementById('2018').setAttribute('enable','');
+     }
+   
+             document.querySelector('#Convertor').addEventListener('click', function(){
+                 const valorTemperatura = document.querySelector('#valorTemperatura').value;
+                 const escalaAtual = document.querySelector('#escalaAtual').value;
+                 const escalaConvertida = document.querySelector('#escalaConvertida').value;
+                 const converte = converteTEM(valorTemperatura, escalaAtual, escalaConvertida);
+                 console.log(converte)
+                 document.querySelector('#resultadoTEM').innerHTML = converte;
+                });
+                document.querySelector('#Limpar').addEventListener('click', function(){
+                    document.querySelector('#resultadoTEM').innerHTML = '';
+                });
+
+            </script> 
+
         <script>
             document.querySelector('#btCalcIMC').addEventListener('click', function(){
                 const peso = document.querySelector('#peso').value;
@@ -67,7 +95,7 @@
                 document.querySelector('#resultadoIMC').innerHTML = '';
             });
             
-            </script>
+        </script>
 
 </body>
 </html>
