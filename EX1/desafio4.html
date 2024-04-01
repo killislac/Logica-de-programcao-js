@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafios</title>
+</head>
+<body>
+    <h2>Triangulos</h2>
+    <form action="">
+        
+        <label for="LadoA">Lado A:</label>
+        <input type="number" id="valorA">
+        
+        <label for="LadoB">Lado B:</label>
+        <input type="number" id="valorB">
+        
+        <label for="LadoC">Lado C:</label>
+        <input type="number" id="valorC">
+        <div>
+
+        <button type="button" id="btVer">Verificar</button>
+        <button type="reset" id="Limpar">Limpar</button>
+        </div>
+
+    </div>
+    </form>
+    <div id="somaTriangulo" ></div>
+    <script src="desafio4.js"></script>
+
+    <script>
+
+   
+        document.querySelector('#btVer').addEventListener('click', function(){
+            const LadoA= document.querySelector('#valorA').value;
+            const LadoB = document.querySelector('#valorB').value;
+            const LadoC = document.querySelector('#valorC').value;
+            const verificar = somaTriangulo(LadoA, LadoB, LadoC);
+            console.log(verificar)
+            document.querySelector('#somaTriangulo').innerHTML = verificar;
+           });
+           document.querySelector('#Limpar').addEventListener('click', function(){
+                    document.querySelector('#somaTriangulo').innerHTML = '';
+                });
+
+
+       </script> 
+
+</body>
+</html>
