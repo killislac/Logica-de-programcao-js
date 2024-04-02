@@ -1,18 +1,18 @@
-function calculoDesconto(cliente, funcionarios, VIP){
-    const tipo1 = cliente, tipo2 = funcionarios, tipo3 = VIP;
-    let mensagem;
-    let valor;
-    if (tipo1 == cliente){
-        mensagem = `${valor}`
-       
-    }else if(tipo2 == funcionarios){
-       desconto = valor * 10 / 100;
-       descontado = valor - desconto;
-        mensagem = `${descontado}`;
-    } else  if (tipo3 == VIP){
-        desconto = valor * 5 / 100;
-        descontado = valor - desconto;
-        mensagem = `${descontado} `;
+function calculoDesconto(tipo, valor){
+
+    if (tipo === 'Cliente'){
+        mensagem = `Total: ${valor}`
+
+    }else if(tipo === 'Funcionarios'){
+       desconto = (valor * 10 / 100);
+       descontado = (valor - desconto);
+        mensagem = `Total: ${descontado}`;
+    } else  if (tipo === "VIP"){
+        desconto = (valor * 5 / 100);
+        descontado = (valor - desconto);
+        mensagem = `Total: ${descontado}`;
+    }else {
+        mensagem = "Tipo inválido";
     }
 
     return mensagem;

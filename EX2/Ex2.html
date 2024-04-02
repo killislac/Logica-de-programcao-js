@@ -12,8 +12,8 @@
 
         <label for="tipos">Tipos:</label>
         <select id="tipos">
-            <option value="cliente">Cliente</option>
-            <option value="funcionarios">Funcionarios</option>
+            <option value="Cliente">Cliente</option>
+            <option value="Funcionarios">Funcionarios</option>
             <option value="VIP">VIP</option>
         </select>
         <label for="valores">valor:</label>
@@ -33,11 +33,13 @@
    
         document.querySelector('#btVer').addEventListener('click', function(){
             const tipos = document.querySelector('#tipos').value;
-            const valores = document.querySelector('#valores').value;
-            const desconto = calculoDesconto(tipos , valores );
-            console.log(desconto)
+            const valores = parseFloat(document.querySelector('#valores').value);
+            const desconto = calculoDesconto(tipos, valores);
+            // console.log(desconto)
             document.querySelector('#calculoDesconto').innerHTML = desconto;
            });
+           
+           
            document.querySelector('#Limpar').addEventListener('click', function(){
                     document.querySelector('#calculoDesconto').innerHTML = '';
                 });
