@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafios</title>
+    <link rel="stylesheet" href="EX1.css">
+    <script src="https://kit.fontawesome.com/4e7d4d0fab.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h2>Triangulos</h2>
-    <form action="">
+    <section>
         
-        <label for="LadoA">Lado A:</label>
-        <input type="number" id="valorA">
+        <div class="elementos-em-linha">   
+        <form action="">
+            <h1>triangulo</h1>
+            <label for="LadoA"></label>
+            <input type="number" id="valorA"  placeholder="Insira o primeiro lado">
+            
+            <label for="LadoB"></label>
+            <input type="number" id="valorB" placeholder="Insira o segundo lado">
+            
+            <label for="LadoC"></label>
+            <input type="number" id="valorC" placeholder="Insira o terceiro lado">
+            <div id="somaTriangulo" ></div>
+            <div>
+            <button type="button" id="btVer">Verificar</button>
+            <button type="reset" id="Limpar"><i class="fa-solid fa-trash" style="color: #db5757;"></i></button>
+            </div>
+        </form>
         
-        <label for="LadoB">Lado B:</label>
-        <input type="number" id="valorB">
-        
-        <label for="LadoC">Lado C:</label>
-        <input type="number" id="valorC">
-        <div>
-
-        <button type="button" id="btVer">Verificar</button>
-        <button type="reset" id="Limpar">Limpar</button>
         </div>
-
-    </div>
-    </form>
-    <div id="somaTriangulo" ></div>
-    <script src="desafio4.js"></script>
+    </section>
+   
+   
+    <script src="EX1.js"></script>
 
     <script>
 
