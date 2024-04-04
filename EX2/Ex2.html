@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="Ex2.css">
 </head>
 <body>
-    <h2>Desconto</h2>
-    <form action="">
-        
+    
 
+    <div id="elementos">
+        <h2>Desconto</h2>
+    <form action="">
         <label for="tipos">Tipos:</label>
         <select id="tipos">
             <option value="Cliente">Cliente</option>
             <option value="Funcionarios">Funcionarios</option>
             <option value="VIP">VIP</option>
         </select>
-        <label for="valores">valor:</label>
-        <input type="number" id="valores">
 
-        <button type="button" id="btVer">Verificar</button>
-        <button type="reset" id="Limpar">Limpar</button>
+        <label for="valores">Valor:</label>
+        <input type="number" id="valores">
+        <div>
+            <button type="button" id="btVer">V</button>
+            <button type="reset" id="Limpar">Limpar</button>
+        </div>
     
 
-    </div>
     </form>
+    </div>
     <div id="calculoDesconto" ></div>
     <script src="Ex2.js"></script>
 

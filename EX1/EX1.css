@@ -12,9 +12,26 @@ body{
     font-family: var(--fonte-geral);
     display: flex;
     justify-content: center;
-    background: #ddd;
+    height: 428px;
+    width: 100%;
+    background: linear-gradient(-45deg,rgba(128,247,160,1), rgba(253,131,131,1));
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    background-size: 500% 100%;
     padding-top: 10rem;
 }
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
 
 .elementos-em-linha{ 
     display: flex;
@@ -34,7 +51,7 @@ body{
     background-color: rgb(182, 255, 182);
     border-color: white;
     border-radius: 6px;
-   
+    border: none;
     
 }
 #Limpar{
@@ -46,6 +63,7 @@ div{
 }
 h1{
     margin: 10px;
+    margin-bottom: 20px;
 }
 label,input{
     margin-bottom: 10px;
@@ -64,6 +82,7 @@ input{
     border-color: rgb(255, 255, 255);
     border-radius: 2px;
 }
+
 #somaTriangulo{
     padding-bottom: 8px;
 }

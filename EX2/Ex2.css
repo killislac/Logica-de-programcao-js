@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: blue;
+    padding-top: 10rem;
+    height: 428px;
+    width: 100%;
+}
+#elementos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    padding: 20px;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgb(75, 75, 75);
+    border-radius: 10px;
+}
+div{
+    display: flex;
+    justify-content: center; 
+    padding-top: 10px;
+}
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+}
+label{
+    padding-top: 10px;
+}
+#btVer{
+    padding-inline: 10% 10%;
+    margin-right: 10px;
+}
+
+img{
+    
+}
