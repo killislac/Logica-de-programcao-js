@@ -18,15 +18,17 @@ body{
     width: 250px;
     height: 250px;
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     flex-direction: column;
     box-shadow: 0 0 10px rgb(75, 75, 75);
-    border-radius: 10px;
+    border-radius: 10px
+    ;
 }
 div{
+
     display: flex;
     justify-content: center; 
-    padding-top: 10px;
+    padding-top: 20px;
 }
 form{
     display: flex;
@@ -36,11 +38,17 @@ form{
 label{
     padding-top: 10px;
 }
-#btVer{
-    padding-inline: 10% 10%;
-    margin-right: 10px;
-}
 
-img{
-    
+
+#btVer{
+    padding-inline: 10% 20%; 
+    margin-right: 10px; 
+    border:none;
+    background: none;
+}
+#Limpar{
+    padding: 5px;
+    border: 2px solid rgb(247, 82, 82) ;
+    background-color: rgb(247, 82, 82);
+    border-radius: 5px;
 }
