@@ -1,47 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busca de Nome</title>
+    <style>
+        .oculto {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
+
     <form action="">
-        <label for="nomes">Nome para incluir:</label>
+        <label for="NomeInclusao">Nome para incluir:</label>
         <input type="text" id="NomeInclusao">
 
-        <button type="button" id="btCadastrar">Cadastrar</button>
-        <button type="button" id="btMostrar">Mostrar</button>
-        <button type="reset" id="btreset">Limpar</button>
+        <button type="reset" id="btCadastrar">Cadastrar</button>
+        <button type="button" id="btPesquisar" class="oculto">Pesquisar</button>
 
     </form>
-<div id="resultado"></div>
+
+    <div id="resultado"></div>
+
     <script>
-       
+
         let nomes = [];
-        document.querySelector('#btCadastrar').addEventListener
-        ('click', () =>{
-            if (nomes.length < 11){
-            nomes.push(document.querySelector('#NomeInclusao').value);
-            }else{
-                window.alert('Já temos 10 nomes!')
-            }else{
-                if(nomes.includes(document.querySelector('#NomeInclusao')).value);{
-                    console.log('ACHEI')
-                }else{
-                    console.log('NAO ACHEI')
+
+        document.addEventListener('keydown', (evento) => {
+
+            if (evento.key === 'Enter') {
+
+                evento.preventDefault();
+
+                if (nomes.length < 10) {
+
+                    document.querySelector('#btCadastrar').click();
+                } else {
+
+                    document.querySelector('#btPesquisar').click();
                 }
             }
-
-             
         });
-        document.querySelector('#btMostrar').addEventListener
-        ('click', () =>{
-            nomes.forEach((nome) =>{
-                document.querySelector('#resultado').innerHTML += nome + '<br>'
-              })
-            
+
+        document.querySelector('#btCadastrar').addEventListener
+            ('click', () => {
+
+                nomes.push(document.querySelector('#NomeInclusao').value);
+
+                if (nomes.length === 10) {
+                    // document.querySelector('#btCadastrar').innerHTML = 'Pesquisar';
+
+                    // Oculte o botão cadastrar
+                    document.querySelector('#btCadastrar').classList.add('oculto');
+
+                    // Desoculte o botão pesquisar
+                    document.querySelector('#btPesquisar').classList.remove('oculto');
+                    document.querySelector('label[for="nomes"]').innerHTML = 'Nome para pesquisar';
+                }
+
+
+            });
+
+        document.querySelector('#btPesquisar').addEventListener('click', () => {
+
+            const nomeBuscado = document.querySelector('#NomeInclusao').value;
+
+            if (nomes.includes(nomeBuscado)) {
+
+                document.querySelector('#resultado').innerHTML = 'Achei';
+
+            } else {
+
+                document.querySelector('#resultado').innerHTML = 'NÃO ACHEI';
+
+            }
+
         });
     </script>
 </body>
+
 </html>
