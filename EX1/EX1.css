@@ -54,6 +54,9 @@ body{
     border: none;
     
 }
+#btVer:hover{
+    cursor: pointer;
+}
 #Limpar{
     border: none;
 }
