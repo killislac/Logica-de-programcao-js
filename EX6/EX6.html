@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+
+<body>
+    <h1>Produtos com desconto</h1>
+    <form action="">
+        <div>
+            <label for="codigoProduto">Código do produto:</label>
+            <input type="text" id="codigoProduto" required autofocus>
+        </div>
+        <div>
+            <label for="qtdeProduto">Quantidade:</label>
+            <input type="text" id="qtdeProduto">
+        </div>
+
+        <div>
+            <button id="btCalcular" type="button">Calcular</button>
+            <button type="reset" id="btLimpar">Limpar</button>
+        </div>
+       
+    </form>
+    <div id="resultado"></div>
+    <script>
+        document.querySelector('#btCalcular').addEventListener('click', function () {
+            const codigoProduto = Number(document.querySelector('#codigoProduto').value);
+            const qtdeProduto = Number(document.querySelector('#qtdeProduto').value);
+
+            const produto = calculoDesconto(codigoProduto, qtdeProduto);
+            const pDescricao = document.createElement('p');
+            pDescricao.innerHTML = produto.descricao;
+            pDescricao.setAttribute('data-produto', produto.codigo);
+
+            const pvalorFinal = document.createElement('p');
+            pvalorFinal.innerHTML = produto.valorFinal.toFixed(2);
+            pvalorFinal.classList.add('monetario');
+
+            document.querySelector('#resultado').append(pDescricao, pvalorFinal);
+
+        });
+             document.querySelector('#btLimpar').addEventListener('click', function(){
+            document.querySelector('#resultado').innerHTML = '';
+        
+        })
+        const produtos = [
+            {
+                codigo: 1,
+                preco: 5.99,
+                descricao: "Salgado"
+            },
+            { codigo: 2, preco: 4.50, descricao: "Snickers" },
+            {
+                codigo: 3,
+                preco: 0.5,
+                desconto: "quebra-queixo"
+            }
+        ]
+        function calculoDesconto(codigoProduto, qtdeProduto) {
+
+            let preco;
+            let desconto;
+            let descricao;
+            let valorFinal;
+
+            for (let i = 0; i < produtos.length; i++) {
+                if (produtos[i].codigo === codigoProduto) {
+                    preco = produtos[i].preco;
+                    descricao = produtos[i].descricao;
+                }
+            }
+             if (qtdeProduto >= 3 && qtdeProduto <= 5) {
+                    desconto = 0.02;
+            } else if (qtdeProduto >= 6 && qtdeProduto <= 10) {
+                    desconto = 0.03;
+            } else if (qtdeProduto > 10) {
+                    desconto = 0.05;
+            } else {
+                    desconto = 0;
+            }
+           
+
+            valorFinal = (preco * qtdeProduto) - (preco * qtdeProduto * desconto);
+            return {
+                codigo: codigoProduto,
+                preco:preco,
+                descricao:descricao,
+                valorFinal:valorFinal,
+            }
+
+        }
+    </script>
+</body>
+
+</html>
