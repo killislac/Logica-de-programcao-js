@@ -6,23 +6,67 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="">
+    <style>
+        *{
+            margin: 0; 
+        }
+        body{
+            min-height: 100vh;
+        
+    
+        }
+        #corpo{
+            margin:10px;
+        }
+        #menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 65px;
+        background-color: rgb(180, 1, 1);
+       
+        
+        }
+        #menu>ul{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* gap: 1rem; */
+        margin-inline-end:20px;
+        }
+        #menu a{
+        display: inline-flex;
+        height: 100%;
+        align-items: center;
+        text-decoration: none;
+        color: antiquewhite;
+        padding: 0 1rem;
+        }
+        #menu li{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <nav>
+        <nav id="menu">
             <ul>
                 <li><a href="EX1/EX1.html">Exercicio triangulo</a></li>
                 <li><a href="EX2/Ex2.html">Exercicio do Desconto</a></li>
                 <li><a href="EX3/EX3.html">Exercicio Futebol</a></li> 
                 <li><a href="EX4/Ex4.html">Exercicio Array </a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
+                <li><a href="EX6/EX6.html">Exercicio Produtos</a></li>
+                <li><a href="EX5/EX5.html">Exercicio Posto</a></li>
+                <li><a href="EX7/EX7.html">Exercicio Mortalidade</a></li>
+    
+               
             </ul>
         </nav>
     </header>
-
+<div id="corpo">
     <div id="bordas">
 
         <h1>Programas</h1>
@@ -75,7 +119,7 @@
     <div id="resultadoTEM"></div>
         <script src="desafio2.js"></script>
         <script src="desafio3.js"></script>
-
+</div>
         <script>
 
    
